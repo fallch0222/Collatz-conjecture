@@ -11,6 +11,9 @@ const drawGraph = (x, y) =>{
   x = x * 10; //스케일 조정
   y = canvas.height - y; //그래프 반전
   y = y * 0.9; //cnavas.height에서 y를 뺴므로 0.9배로 스케일 조정
+  if(y < 0){
+    return;
+  }
   ctx.beginPath();
   ctx.moveTo(savedX, savedY);
   ctx.lineTo(x, y);
@@ -41,7 +44,7 @@ const maximumLimit = 500; //얼마나 많은 테스트 케이스에 대하여 �
 // 자동계산
 const dnagerbutton = () => {
   let currentNum = dnagerTestcase;
-  let tryedNum = 1;
+  let tryedNum = 0;
   while(dnagerTestcase > 0){
     if(currentNum % 2 === 0) {
       currentNum = ifEven(currentNum);
@@ -88,7 +91,7 @@ const dnagerStart = () =>{
 
 
   let currentNum = parseInt(testCase);
-  let tryedNum = 1;
+  let tryedNum = 0;
   while(testCase > 0){
     drawGraph(tryedNum, currentNum);
     if(currentNum % 2 === 0) {
