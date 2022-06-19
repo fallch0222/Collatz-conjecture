@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>danger problem</title>
+</head>
+<body>
+    <div class="container">
+        <canvas id="Canvas" height="2500" width="2500" style="border:1px solid #000000;">
+            
+        </canvas>
+        <div class="controls">
+            <input id="dangerInput" type="number"></input>
+            <button id="start" onclick="dnagerStart()">start</button>
+            <button id="reset" onclick="clearCanvas()">Reset</button>
+            <button id="danger" onclick="dnagerbutton()">danger</button>
+        </div>
+        <div class="results">
+            <canvas id="resultCnavas" height="200" width="500" style="border:1px solid #000000;"></canvas>
+        </div> 
+        <script src="./carcultaion.js"></script>
+    </div>
+    
+</body>
+</html>
