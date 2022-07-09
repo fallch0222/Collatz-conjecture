@@ -84,7 +84,7 @@ const dnagerStart = () =>{
     alert('Please enter a number');
   }
 
-  if(isNaN((parseInt(testCase))) === true) {
+  if(isNaN((parseInt(testCase)))) {
     alert('Please enter proper number');
   }
 
