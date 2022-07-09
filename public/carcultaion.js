@@ -10,10 +10,12 @@ let scale = 1;
 const drawGraph = (x, y) =>{ 
   x = x * 10; //스케일 조정
   y = canvas.height - y; //그래프 반전
-  y = y * 0.9; //cnavas.height에서 y를 뺴므로 0.9배로 스케일 조정
-  if(y < 0){
+  y = y * 1.5; //cnavas.height에서 y를 뺴므로 0.9배로 스케일 조정
+
+  if(y < 0){ 
     return;
   }
+
   ctx.beginPath();
   ctx.moveTo(savedX, savedY);
   ctx.lineTo(x, y);
@@ -38,14 +40,15 @@ const ifOdd = (num) => { //홀수인 경우
 }
 
 let dnagerTestcase = 1; //현재 계산중인 숫자
-const testCaseLimit = 50; //각 테스트 케이스의 최대 계산횟수를 정하는 상수
-const maximumLimit = 500; //얼마나 많은 테스트 케이스에 대하여 계산할지 정하는 상수;
+const testCaseLimit = 300; //각 테스트 케이스의 최대 계산횟수를 정하는 상수
+const maximumLimit = 500; //얼마나 많은 테스트 케이스에 대하여 계산할지 정하는 상수
 
 // 자동계산
 const dnagerbutton = () => {
   let currentNum = dnagerTestcase;
   let tryedNum = 0;
   while(dnagerTestcase > 0){
+    drawGraph(tryedNum, currentNum);
     if(currentNum % 2 === 0) {
       currentNum = ifEven(currentNum);
     }
@@ -81,7 +84,7 @@ const dnagerStart = () =>{
     alert('Please enter a number');
   }
 
-  if(parseInt(testCase) === NaN) {
+  if(isNaN((parseInt(testCase))) === true) {
     alert('Please enter proper number');
   }
 
@@ -102,16 +105,10 @@ const dnagerStart = () =>{
     }
     tryedNum += 1;
 
-     
-    
-
     if(tryedNum > 101){
 
       break;
     }
-
-
-
   }
   return;
 }
