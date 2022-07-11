@@ -88,12 +88,11 @@ const dnagerStart = () =>{
     alert('Please enter proper number');
   }
 
-  if(parseInt(testCase) <= 0) {
+  let currentNum = parseInt(testCase);
+  if(currentNum <= 0) {
     alert('Please enter positive number');
   }
 
-
-  let currentNum = parseInt(testCase);
   let tryedNum = 0;
   while(testCase > 0){
     drawGraph(tryedNum, currentNum);
