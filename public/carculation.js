@@ -84,11 +84,12 @@ const dnagerStart = () =>{
     alert('Please enter a number');
   }
 
-  if(isNaN((parseInt(testCase)))) {
+  let currentNum = parseInt(testCase);
+  if(isNaN(currentNum)) {
     alert('Please enter proper number');
   }
 
-  let currentNum = parseInt(testCase);
+ 
   if(currentNum <= 0) {
     alert('Please enter positive number');
   }
